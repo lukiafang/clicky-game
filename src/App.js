@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import Navbar from "./components/Navbar";
 import friends from "./friends.json";
 import "./App.css";
 
@@ -22,7 +23,8 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Friends List</Title>
+        <Navbar />
+        <Title>Memory Game</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.removeFriend}
@@ -34,6 +36,7 @@ class App extends Component {
             location={friend.location}
           />
         ))}
+        <Footer />
       </Wrapper>
     );
   }
